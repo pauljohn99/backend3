@@ -23,14 +23,11 @@ public class Matrix3 {
 		for(int i=0;i<row2;i++) {
 			for(int j=0;j<col2;j++) {
 				m2[i][j]=read.nextInt();}}
-		for(int i=0;i<row2;i++) {
-			for(int j=0;j<col1;j++) {
-				int temp=0;
-				for(int k=0;k<col1;k++) {
-			temp=temp+(m1[j][k]*m2[k][j]);}
-				multi[i][j]=temp;}}
 		for(int i=0;i<row1;i++) {
 			for(int j=0;j<col2;j++) {
+				multi[i][j]=0;
+		     for(int k=0;k<col1;k++) {
+		    	multi[i][j]=multi[i][j]+(m1[i][k]*m2[k][j]);}
 				System.out.print(multi[i][j]+ "    ");}
 			System.out.println();}
 			}
