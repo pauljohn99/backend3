@@ -17,7 +17,7 @@ public class Matrix2 {
 				m1[i][j]=read.nextInt();}}
 		for(int i=0;i<row;i++) {
 			for(int j=0;j<col;j++) {
-				m2[i][j]=read.nextInt();}}
+				m2[i][j]=con*m1[i][j];}}
 		
 		
 	}}
