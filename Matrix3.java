@@ -29,8 +29,7 @@ public class Matrix3 {
 		     for(int k=0;k<col1;k++) {
 		    	multi[i][j]=multi[i][j]+(m1[i][k]*m2[k][j]);}
 				System.out.print(multi[i][j]+ "    ");}
-			System.out.println();}
-			}
+			System.out.println();}}
 		else 
 			System.out.println("invalid matrix");
 	}}
