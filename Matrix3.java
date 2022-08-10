@@ -14,7 +14,6 @@ public class Matrix3 {
 		int m1[][]=new int[100][100];
 		int m2[][]=new int[100][100];
 		int multi[][]=new int[100][100];
-		int temp;
 		if(col1==row2) {
 		System.out.println("enter elements of matrix 1");
 		for(int i=0;i<row1;i++) {
@@ -25,5 +24,20 @@ public class Matrix3 {
 			for(int j=0;j<col2;j++) {
 				m2[i][j]=read.nextInt();}}
 		for(int i=0;i<row2;i++) {
-			for(int j=0;j<col2;j++) {	
-			temp=temp+(m1[i][j]*m2[j][i])
+			for(int j=0;j<col1;j++) {
+				int temp=0;
+				for(int k=0;k<col1;k++) {
+			temp=temp+(m1[j][k]*m2[k][j]);}
+				multi[i][j]=temp;}}
+		for(int i=0;i<row1;i++) {
+			for(int j=0;j<col2;j++) {
+				System.out.print(multi[i][j]+ "    ");}
+			System.out.println();}
+			}
+		else 
+			System.out.println("invalid matrix");
+	}}
+		
+		
+		
+		
