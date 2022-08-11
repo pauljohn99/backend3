@@ -6,7 +6,7 @@ public class RomanToInteger {
 		System.out.println("enter roman numeral");
 		String roman=read.nextLine();
 		int n=roman.length();
-		int sum=0,i=0;
+		int sum=0,i=0,k=0;
 		while(i<n) {
 			if(roman.charAt(i)=='I'){
 				if(roman.charAt(i+1)=='V') {
@@ -17,15 +17,24 @@ public class RomanToInteger {
 					sum=sum+9;
 					i=i+2;
 				}
-				else {
+				else if(roman.charAt(i+1)=='I') {
 					sum=sum+1;
 					i=i+1;
+				}
+				else if((i+1)==n) {
+					sum=sum+1;
+					i=i+1;
+				}
+				else {
+					System.out.println("invalid roman numeral");
+					i=i+n;
+					k=k+1;
 				}
 			}
 			else if(roman.charAt(i)=='V') {
 				sum=sum+5;
 				i=i+1;
-			}
+			    }
 			else if(roman.charAt(i)=='X'){
 				if(roman.charAt(i+1)=='L') {
 					sum=sum+40;
@@ -39,7 +48,7 @@ public class RomanToInteger {
 					sum=sum+10;
 					i=i+1;
 				}
-					}
+		    }
 			else if(roman.charAt(i)=='L') {
 				sum=sum+50;
 				i=i+1;
@@ -73,6 +82,7 @@ public class RomanToInteger {
 				
 				
 			}
+		if(k==0)
 		 System.out.println(sum);
 				
 			}
