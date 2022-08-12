@@ -25,6 +25,11 @@ public class RomanToInteger {
 					sum=sum+1;
 					i=i+1;
 				}
+				else {
+					k=k+1;
+					i=i+n;
+					System.out.println("invalid numeral");
+				}
 				
 				}
 				
@@ -33,7 +38,11 @@ public class RomanToInteger {
 				i=i+1;
 			    }
 			else if(roman.charAt(i)=='X'){
-				if(roman.charAt(i+1)=='L') {
+				if((i+1)==n) {
+					sum=sum+10;
+					i=i+1;
+					}
+				else if(roman.charAt(i+1)=='L') {
 					sum=sum+40;
 					i=i+2;
 				}
@@ -41,9 +50,13 @@ public class RomanToInteger {
 					sum=sum+90;
 					i=i+2;
 				}
-				else {
+				else if(roman.charAt(i+1)=='X') {
 					sum=sum+10;
-					i=i+1;
+					i=i+1;}
+				else {
+					k=k+1;
+					i=i+n;
+					System.out.println("inavlid numeral");
 				}
 		    }
 			else if(roman.charAt(i)=='L') {
@@ -51,6 +64,10 @@ public class RomanToInteger {
 				i=i+1;
 			}
 			else if(roman.charAt(i)=='C'){
+				if((i+1)==n) {
+					sum=sum+100;
+					i=i+1;
+					}
 				if(roman.charAt(i+1)=='D') {
 					sum=sum+400;
 					i=i+2;
@@ -59,28 +76,35 @@ public class RomanToInteger {
 					sum=sum+900;
 					i=i+2;
 				}
-				else {
+				else if(roman.charAt(i+1)=='C') {
 					sum=sum+100;
 					i=i+1;
+				}
+				else {
+					k=k+1;
+					i=i+n;
+					System.out.println("invalid numeral");
 				}
 					}
 			else if(roman.charAt(i)=='D') {
 				sum=sum+500;
 				i=i+1;
-			}
+				}
+				
 			else if(roman.charAt(i)=='M') {
 				sum=sum+1000;
 				i=i+1;
 			}
 			else {
 				System.out.println("invalid roman numeral");
-			    i=i+1;
-			    break;
+			    i=i+n;
+			    k=k+1;
 			    }
 			
 				
 				
 			}
+		if(k==0)
 		 System.out.println(sum);
 				
 			}
