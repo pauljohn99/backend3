@@ -9,7 +9,11 @@ public class RomanToInteger {
 		int sum=0,i=0,k=0;
 		while(i<n) {
 			if(roman.charAt(i)=='I'){
-				if(roman.charAt(i+1)=='V') {
+				if((i+1)==n) {
+					sum=sum+1;
+					i=i+1;
+					}
+				else if(roman.charAt(i+1)=='V') {
 					sum=sum+4;
 					i=i+2;
 				}
@@ -21,16 +25,9 @@ public class RomanToInteger {
 					sum=sum+1;
 					i=i+1;
 				}
-				else if((i+1)==n) {
-					sum=sum+1;
-					i=i+1;
+				
 				}
-				else {
-					System.out.println("invalid roman numeral");
-					i=i+n;
-					k=k+1;
-				}
-			}
+				
 			else if(roman.charAt(i)=='V') {
 				sum=sum+5;
 				i=i+1;
@@ -75,14 +72,15 @@ public class RomanToInteger {
 				sum=sum+1000;
 				i=i+1;
 			}
-			else
+			else {
 				System.out.println("invalid roman numeral");
-			
+			    i=i+1;
+			    break;
+			    }
 			
 				
 				
 			}
-		if(k==0)
 		 System.out.println(sum);
 				
 			}
